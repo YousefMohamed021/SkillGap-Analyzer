@@ -1,0 +1,14 @@
+Python
+
+venv/
+*.pyc
+pycache/
+
+Data
+
+raw_data/
+
+Secrets
+
+*.env
+*credentials.json
