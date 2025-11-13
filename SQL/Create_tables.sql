@@ -1,20 +1,20 @@
 -- Dimension Table: Date
 CREATE TABLE IF NOT EXISTS dim_date (
     date_key SERIAL PRIMARY KEY,
-    year_of_trade INT NOT NULL 
+    year_of_trade INT NOT NULL UNIQUE
 );
 
 -- Dimension Table: Flow (Imports/Exports)
 CREATE TABLE IF NOT EXISTS dim_flow (
     flow_key SERIAL PRIMARY KEY,
-    flow_description VARCHAR(50)
+    flow_description VARCHAR(50) UNIQUE NOT NULL
 );
 
 -- Dimension Table: Partner Country
 CREATE TABLE IF NOT EXISTS dim_country (
     partner_country_key SERIAL PRIMARY KEY,
-    partner_country_iso VARCHAR(3) NOT NULL UNIQUE,
-    partner_country_name VARCHAR(255),
+    partner_country_name VARCHAR(255) NOT NULL UNIQUE,
+    partner_country_iso VARCHAR(3) ,
     partner_code INT UNIQUE
 );
 
